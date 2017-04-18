@@ -1,0 +1,26 @@
+{
+    "name": "groundsix/password",
+    "description": "Comprehensive composable password validation",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anthony Porthouse",
+            "email": "anthony.porthouse@groundsix.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Groundsix\\Password\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Groundsix\\Password\\Tests\\": "tests"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    }
+}
