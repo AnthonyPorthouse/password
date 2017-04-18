@@ -6,5 +6,8 @@ install:
   - composer install
 
 script:
+  - mkdir -p build/logs
   - phpunit --coverage-clover build/logs/clover.xml
-  - comopser exec test-reporter
+
+after_success:
+  - travis_retry php vendor/bin/coveralls
