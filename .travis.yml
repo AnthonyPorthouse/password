@@ -4,3 +4,7 @@ php:
 
 install:
   - composer install
+
+script:
+  - phpunit --coverage-clover build/logs/clover.xml
+  - comopser exec test-reporter

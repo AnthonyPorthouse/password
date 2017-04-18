@@ -19,7 +19,9 @@
             "Groundsix\\Password\\Tests\\": "tests"
         }
     },
-    "require": {},
+    "require": {
+        "codeclimate/php-test-reporter": "dev-master"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6.1"
     }
