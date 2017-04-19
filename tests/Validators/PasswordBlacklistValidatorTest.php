@@ -17,6 +17,14 @@ class PasswordBlacklistValidatorTest extends TestCase
         $this->validator = new PasswordBlacklistValidator();
     }
 
+    public function testCustomBlacklist(): void
+    {
+        $validator = new PasswordBlacklistValidator(__DIR__ . '/blacklist.txt');
+        $this->expectException(PasswordException::class);
+        $validator->validate('password');
+        $this->assertTrue($validator->validate('test1234'));
+    }
+
     /**
      * @dataProvider validPasswords
      * @param string $password
