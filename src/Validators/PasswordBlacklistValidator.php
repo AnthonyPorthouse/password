@@ -46,6 +46,6 @@ class PasswordBlacklistValidator implements Validator
             yield trim($password);
         }
 
-        fclose ($fh);
+        fclose($fh);
     }
 }
