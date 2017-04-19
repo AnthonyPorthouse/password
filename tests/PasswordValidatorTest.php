@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace Groundsix\Password\Tests;
 
+use Groundsix\Password\PasswordException;
 use Groundsix\Password\PasswordValidator;
+use Groundsix\Password\Validators\PasswordBlacklistValidator;
 use Groundsix\Password\Validators\PasswordDomainValidator;
 use Groundsix\Password\Validators\PasswordLengthValidator;
 use PHPUnit\Framework\TestCase;
@@ -18,6 +20,7 @@ class PasswordValidatorTest extends TestCase
         $this->validator = new PasswordValidator([
             new PasswordLengthValidator(),
             new PasswordDomainValidator('groundsix.com'),
+            new PasswordBlacklistValidator(),
         ]);
     }
 
@@ -42,8 +45,27 @@ class PasswordValidatorTest extends TestCase
     public function validPasswords()
     {
         return [
-            ['test1234'],
+            ['asdasdaffasd'],
             ['💩💩💩💩💩💩💩💩'],
+        ];
+    }
+
+    /**
+     * @dataProvider invalidPasswords
+     * @param string $password
+     */
+    public function testInvalidPasswords(string $password): void
+    {
+        $this->expectException(PasswordException::class);
+        $this->validator->validate($password);
+    }
+
+    public function invalidPasswords(): array
+    {
+        return [
+            ['2short'],
+            ['groundsix'],
+            ['password']
         ];
     }
 }
