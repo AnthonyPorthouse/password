@@ -14,7 +14,7 @@ class PasswordBlacklistValidator implements Validator
 
     public function __construct(string $file = null)
     {
-        if ($file) {
+        if ($file !== null) {
             $this->file = $file;
         } else {
             $this->file = __DIR__ . '/../../res/top_10000.txt';
