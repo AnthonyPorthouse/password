@@ -9,6 +9,7 @@
             "email": "anthony.porthouse@groundsix.com"
         }
     ],
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Groundsix\\Password\\": "src"
