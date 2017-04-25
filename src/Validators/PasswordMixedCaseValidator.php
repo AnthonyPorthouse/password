@@ -11,7 +11,7 @@ class PasswordMixedCaseValidator implements Validator
     /** {@inheritdoc} */
     public function validate(string $password): bool
     {
-        if($password !== mb_strtolower($password) && $password !== mb_strtoupper($password)) {
+        if ($password !== mb_strtolower($password) && $password !== mb_strtoupper($password)) {
             return true;
         }
 
