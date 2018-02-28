@@ -4,28 +4,30 @@ declare(strict_types=1);
 namespace Porthou\Password\Tests\Validators;
 
 use Porthou\Password\PasswordException;
-use Porthou\Password\Validators\PasswordBlacklistValidator;
+use Porthou\Password\Validators\PasswordPwnedListValidator;
 use PHPUnit\Framework\TestCase;
 
-class PasswordBlacklistValidatorTest extends TestCase
+class PasswordPwnedListValidatorTest extends TestCase
 {
-    /** @var PasswordBlacklistValidator $validator */
+    /** @var PasswordPwnedListValidator $validator */
     private $validator;
 
     public function setUp(): void
     {
-        $this->validator = new PasswordBlacklistValidator();
+        $this->validator = new PasswordPwnedListValidator(__DIR__ . '/assets/pwndlist.txt', 1);
     }
 
     /**
      * @throws PasswordException
      */
-    public function testCustomBlacklist(): void
+    public function testPwnedCount(): void
     {
-        $validator = new PasswordBlacklistValidator(__DIR__ . '/assets/blacklist.txt');
+        $validator = new PasswordPwnedListValidator(__DIR__ . '/assets/pwndlist.txt', 10);
+        $this->assertTrue($validator->validate('password'));
+
+        $validator = new PasswordPwnedListValidator(__DIR__ . '/assets/pwndlist.txt', 5);
         $this->expectException(PasswordException::class);
         $validator->validate('password');
-        $this->assertTrue($validator->validate('test1234'));
     }
 
     /**
