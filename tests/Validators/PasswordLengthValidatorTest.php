@@ -2,9 +2,9 @@
 declare(strict_types=1);
 namespace Password\Tests\Validators;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validator;
-use Groundsix\Password\Validators\PasswordLengthValidator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validator;
+use Porthou\Password\Validators\PasswordLengthValidator;
 use PHPUnit\Framework\TestCase;
 
 class PasswordLengthValidatorTest extends TestCase

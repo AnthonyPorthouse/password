@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Groundsix\Password;
+namespace Porthou\Password;
 
 class PasswordValidator
 {

@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Groundsix\Password\Validators;
+namespace Porthou\Password\Validators;
 
 use Generator;
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validator;
 
 class PasswordBlacklistValidator implements Validator
 {

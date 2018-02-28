@@ -1,9 +1,13 @@
 {
-    "name": "groundsix/password",
+    "name": "porthou/password",
     "description": "Comprehensive composable password validation",
     "type": "library",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Anthony Porthouse",
+            "email": "anthony@porthou.se"
+        },
         {
             "name": "Anthony Porthouse",
             "email": "anthony.porthouse@groundsix.com"
@@ -12,12 +16,12 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Groundsix\\Password\\": "src"
+            "Porthou\\Password\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Groundsix\\Password\\Tests\\": "tests"
+            "Porthou\\Password\\Tests\\": "tests"
         }
     },
     "require": {

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Groundsix\Password\Validators;
+namespace Porthou\Password\Validators;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validator;
 
 class PasswordMinimumNumberValidator implements Validator
 {

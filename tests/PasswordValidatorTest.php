@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Groundsix\Password\Tests;
+namespace Porthou\Password\Tests;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\PasswordValidator;
-use Groundsix\Password\Validators\PasswordBlacklistValidator;
-use Groundsix\Password\Validators\PasswordDomainValidator;
-use Groundsix\Password\Validators\PasswordLengthValidator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\PasswordValidator;
+use Porthou\Password\Validators\PasswordBlacklistValidator;
+use Porthou\Password\Validators\PasswordDomainValidator;
+use Porthou\Password\Validators\PasswordLengthValidator;
 use PHPUnit\Framework\TestCase;
 
 class PasswordValidatorTest extends TestCase

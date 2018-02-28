@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Groundsix\Password\Tests\Validators;
+namespace Porthou\Password\Tests\Validators;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validators\PasswordMinimumNumberValidator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validators\PasswordMinimumNumberValidator;
 use PHPUnit\Framework\TestCase;
 
 class PasswordMinimumNumberValidatorTest extends TestCase

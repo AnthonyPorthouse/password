@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Groundsix\Password\Tests\Validators;
+namespace Porthou\Password\Tests\Validators;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validators\PasswordBlacklistValidator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validators\PasswordBlacklistValidator;
 use PHPUnit\Framework\TestCase;
 
 class PasswordBlacklistValidatorTest extends TestCase
@@ -28,6 +28,7 @@ class PasswordBlacklistValidatorTest extends TestCase
     /**
      * @dataProvider validPasswords
      * @param string $password
+     * @throws PasswordException
      */
     public function testValidPasswords(string $password): void
     {
@@ -46,6 +47,7 @@ class PasswordBlacklistValidatorTest extends TestCase
     /**
      * @dataProvider invalidPasswords
      * @param string $password
+     * @throws PasswordException
      */
     public function testInvalidPasswords(string $password): void
     {

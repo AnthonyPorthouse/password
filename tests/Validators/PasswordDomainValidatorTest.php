@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Groundsix\Tests\Password\Validators;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validator;
-use Groundsix\Password\Validators\PasswordDomainValidator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validator;
+use Porthou\Password\Validators\PasswordDomainValidator;
 use PHPUnit\Framework\TestCase;
 
 class PasswordDomainValidatorTest extends TestCase

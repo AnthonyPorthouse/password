@@ -1,6 +1,6 @@
 <?php
 
-namespace Groundsix\Password;
+namespace Porthou\Password;
 
 class PasswordException extends \Exception
 {

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Groundsix\Password\Tests\Validators;
+namespace Porthou\Password\Tests\Validators;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validators\PasswordMixedCaseValidator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validators\PasswordMixedCaseValidator;
 use PHPUnit\Framework\TestCase;
 use function Sodium\crypto_box_publickey_from_secretkey;
 

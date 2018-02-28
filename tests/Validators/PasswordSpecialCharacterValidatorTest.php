@@ -6,10 +6,10 @@
  * Time: 08:53
  */
 
-namespace Groundsix\Password\Tests\Validators;
+namespace Porthou\Password\Tests\Validators;
 
-use Groundsix\Password\PasswordException;
-use Groundsix\Password\Validators\PasswordSpecialCharacterValidator;
+use Porthou\Password\PasswordException;
+use Porthou\Password\Validators\PasswordSpecialCharacterValidator;
 use PHPUnit\Framework\TestCase;
 
 class PasswordSpecialCharacterValidatorTest extends TestCase
