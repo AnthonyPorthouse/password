@@ -39,7 +39,7 @@ class PasswordPwnedApiValidatorTest extends TestCase
         $this->client->setDefaultResponse($this->createResponse());
         $this->assertTrue($validator->validate('password'));
 
-        $validator = new PasswordPwnedApiValidator(5,  $this->client);
+        $validator = new PasswordPwnedApiValidator(5, $this->client);
         $this->expectException(PasswordException::class);
         $this->client->setDefaultResponse($this->createResponse());
         $validator->validate('password');
