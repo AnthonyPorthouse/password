@@ -89,7 +89,7 @@ class PasswordPwnedApiValidator implements Validator
 
         $bodyStream = $response->getBody()->detach();
 
-        if (!$bodyStream) {
+        if ($bodyStream === null) {
             return;
         }
 

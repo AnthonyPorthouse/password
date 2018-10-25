@@ -42,7 +42,7 @@ class PasswordBlacklistValidator implements Validator
     {
         $fh = fopen($this->file, 'rb');
 
-        if (!$fh) {
+        if ($fh === false) {
             return;
         }
 
