@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace Password\Tests\Validators;
+
+namespace Porthou\Password\Tests\Validators;
 
 use Porthou\Password\PasswordException;
 use Porthou\Password\Validator;

@@ -40,10 +40,14 @@ class PasswordBlacklistValidator implements Validator
      */
     private function getBlacklistPasswords(): Generator
     {
-        $fh = fopen($this->file, 'rb');
+        $fh = @fopen($this->file, 'rb');
+
+        if ($fh === false) {
+            return;
+        }
 
         while (($password = fgets($fh)) !== false) {
-            yield trim($password);
+            yield trim((string)$password);
         }
 
         fclose($fh);

@@ -6,7 +6,6 @@ namespace Porthou\Password\Tests\Validators;
 use Porthou\Password\PasswordException;
 use Porthou\Password\Validators\PasswordMixedCaseValidator;
 use PHPUnit\Framework\TestCase;
-use function Sodium\crypto_box_publickey_from_secretkey;
 
 class PasswordMixedCaseValidatorTest extends TestCase
 {

@@ -42,7 +42,7 @@ class PasswordValidatorTest extends TestCase
         $this->assertTrue($result);
     }
 
-    public function validPasswords()
+    public function validPasswords(): array
     {
         return [
             ['asdasdaffasd'],

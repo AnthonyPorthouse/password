@@ -67,4 +67,10 @@ class PasswordBlacklistValidatorTest extends TestCase
             ['dragon'],
         ];
     }
+
+    public function testMissingFile(): void
+    {
+        $validator = new PasswordBlacklistValidator(__DIR__ . '/assets/doesnotexist.txt');
+        $this->assertTrue($validator->validate('12345'));
+    }
 }

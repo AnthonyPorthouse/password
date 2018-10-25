@@ -26,6 +26,7 @@
     },
     "require": {
         "php": "^7.1",
+        "ext-json": "*",
         "psr/http-message": "^1.0",
         "php-http/client-implementation":  "^1.0",
         "php-http/message-factory": "^1.0",
@@ -36,6 +37,8 @@
         "phpunit/phpunit": "^6.1|^7.0",
         "php-coveralls/php-coveralls": "^2.0",
         "roave/security-advisories": "dev-master",
-        "php-http/mock-client": "^1.1"
+        "php-http/mock-client": "^1.1",
+        "phpstan/phpstan": "^0.10.5",
+        "php-http/curl-client": "^1.7"
     }
 }

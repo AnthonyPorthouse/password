@@ -52,10 +52,14 @@ class PasswordPwnedListValidator
      */
     private function getBlacklistPasswords(): Generator
     {
-        $fh = fopen($this->file, 'rb');
+        $fh = @fopen($this->file, 'rb');
+
+        if ($fh === false) {
+            return;
+        }
 
         while (($password = fgets($fh)) !== false) {
-            yield explode(':', trim($password));
+            yield explode(':', trim((string)$password));
         }
 
         fclose($fh);
