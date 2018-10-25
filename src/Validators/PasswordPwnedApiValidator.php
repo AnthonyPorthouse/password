@@ -9,8 +9,9 @@ use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\MessageFactory;
 use Porthou\Password\PasswordException;
+use Porthou\Password\Validator;
 
-class PasswordPwnedApiValidator
+class PasswordPwnedApiValidator implements Validator
 {
     /** @var int $minimumThreshold */
     private $minimumThreshold;

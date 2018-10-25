@@ -4,10 +4,13 @@ declare(strict_types=1);
 namespace Porthou\Password\Tests\Validators;
 
 use Http\Discovery\MessageFactoryDiscovery;
+use Http\Message\MessageFactory\DiactorosMessageFactory;
 use Http\Mock\Client;
 use Porthou\Password\PasswordException;
+use Porthou\Password\Validator;
 use Porthou\Password\Validators\PasswordPwnedApiValidator;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class PasswordPwnedApiValidatorTest extends TestCase
@@ -24,7 +27,14 @@ class PasswordPwnedApiValidatorTest extends TestCase
 
         $this->client->setDefaultResponse($this->createResponse());
 
-        $this->validator = new PasswordPwnedApiValidator(1, $this->client);
+        $this->validator = new PasswordPwnedApiValidator(1, $this->client, MessageFactoryDiscovery::find());
+    }
+
+    public function testDefaultInitialization(): void
+    {
+        $validator = new PasswordPwnedApiValidator();
+
+        $this->assertInstanceOf(Validator::class, $validator);
     }
 
     /**
@@ -80,6 +90,23 @@ class PasswordPwnedApiValidatorTest extends TestCase
             ['qwertyuiop'],
             ['dragon'],
         ];
+    }
+
+    public function testBadResponse()
+    {
+        /** @var RequestInterface $request */
+        $request = $this->prophesize(RequestInterface::class)->reveal();
+        $client = new Client();
+        $client->addException(
+            new \Http\Client\Exception\RequestException(
+                'Mock Bad Response',
+                $request
+            )
+        );
+        $validator = new PasswordPwnedApiValidator(50, $client);
+
+        $result = $validator->validate('test');
+        $this->assertTrue($result);
     }
 
     /**
