@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Porthou\Password\Tests\Validators;
 
 use Http\Discovery\MessageFactoryDiscovery;
-use Http\Message\MessageFactory\DiactorosMessageFactory;
 use Http\Mock\Client;
 use Porthou\Password\PasswordException;
 use Porthou\Password\Validator;
@@ -92,7 +91,7 @@ class PasswordPwnedApiValidatorTest extends TestCase
         ];
     }
 
-    public function testBadResponse()
+    public function testBadResponse(): void
     {
         /** @var RequestInterface $request */
         $request = $this->prophesize(RequestInterface::class)->reveal();

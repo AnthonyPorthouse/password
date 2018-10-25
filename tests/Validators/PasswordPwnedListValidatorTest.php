@@ -69,4 +69,10 @@ class PasswordPwnedListValidatorTest extends TestCase
             ['dragon'],
         ];
     }
+
+    public function testMissingFile(): void
+    {
+        $validator = new PasswordPwnedListValidator(__DIR__ . '/assets/doesnotexist.txt', 1);
+        $this->assertTrue($validator->validate('12345'));
+    }
 }
