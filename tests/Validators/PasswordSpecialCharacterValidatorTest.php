@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: port3
- * Date: 25/04/2017
- * Time: 08:53
- */
 
 namespace Porthou\Password\Tests\Validators;
 

@@ -54,8 +54,12 @@ class PasswordPwnedListValidator
     {
         $fh = fopen($this->file, 'rb');
 
+        if (!$fh) {
+            return;
+        }
+
         while (($password = fgets($fh)) !== false) {
-            yield explode(':', trim($password));
+            yield explode(':', trim((string)$password));
         }
 
         fclose($fh);

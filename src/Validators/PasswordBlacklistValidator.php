@@ -42,8 +42,12 @@ class PasswordBlacklistValidator implements Validator
     {
         $fh = fopen($this->file, 'rb');
 
+        if (!$fh) {
+            return;
+        }
+
         while (($password = fgets($fh)) !== false) {
-            yield trim($password);
+            yield trim((string)$password);
         }
 
         fclose($fh);

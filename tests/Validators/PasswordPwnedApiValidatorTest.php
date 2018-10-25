@@ -18,9 +18,6 @@ class PasswordPwnedApiValidatorTest extends TestCase
     /** @var Client */
     private $client;
 
-    /** @var ResponseInterface */
-    private $response;
-
     public function setUp(): void
     {
         $this->client = new Client();
@@ -90,11 +87,17 @@ class PasswordPwnedApiValidatorTest extends TestCase
      */
     private function createResponse(): ResponseInterface
     {
+        $fh = fopen(__DIR__ . '/assets/apipwndlist.txt', 'rb');
+
+        if (!$fh) {
+            throw new \RuntimeException('Example file cannot be opened');
+        }
+
         return MessageFactoryDiscovery::find()->createResponse(
             200,
             null,
             [],
-            fopen(__DIR__ . '/assets/apipwndlist.txt', 'rb')
+            $fh
         );
     }
 }

@@ -88,8 +88,12 @@ class PasswordPwnedApiValidator
 
         $bodyStream = $response->getBody()->detach();
 
+        if (!$bodyStream) {
+            return;
+        }
+
         while (($password = fgets($bodyStream)) !== false) {
-            yield explode(':', trim($password));
+            yield explode(':', trim((string)$password));
         }
 
         fclose($bodyStream);
